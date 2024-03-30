@@ -75,11 +75,13 @@ assign BO = (a0&b) | (b&cin) | (a0&cin);
 endmodule
 ```
 
-**RTL Schematic**
+### RTL Schematic
+![WhatsApp Image 2024-03-30 at 10 12 53](https://github.com/aaron-h-2k5/FULL_ADDER_SUBTRACTOR/assets/144250957/2a82b38e-6b93-4d9f-b47e-cee6ab218fb5)
 
-**Output Timing Waveform**
+### Output Timing Waveform
+![WhatsApp Image 2024-03-30 at 10 12 52](https://github.com/aaron-h-2k5/FULL_ADDER_SUBTRACTOR/assets/144250957/30360404-5a1c-479e-9357-67df02d1df13)
 
-**Result:**
+### Result:
 
 Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
 
