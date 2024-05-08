@@ -64,24 +64,48 @@ Borrow out = A'Bin + A'B + BBin
 ### Developed By: NARESH.p.s
 ### Register number: 212223040127
 ```
-module FULL_addsub(a,b,cin,sum,carry,BO,DIFF);
+
+## Full_adder
+module ex5(a,b,cin,sum,carry);
 input a,b,cin;
-output sum,carry,BO,DIFF;
-assign sum = a^b^cin;
-assign carry = (a&b) | (b&cin) | (a&cin);
-wire a0;
-not (a0,a);
-//Write syntax for full subtractor Borrow and Difference in data flow modelling
-assign DIFF = a^b^cin;
-assign BO = (a0&b) | (b&cin) | (a0&cin);
+output sum,carry;
+wire w1,w2,w3,w4;       
+xor(w1,a,b);
+xor(sum,w1,cin);        
+
+and(w2,a,b);
+and(w3,b,cin);
+and(w4,cin,a);
+
+or(carry,w2,w3,w4);
+endmodule 
+
+## Full_subtractor
+module ex5(df,bo,a,b,bin);
+output df,bo;
+input a,b,bin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(~w1&bin);
+assign df=w1^bin;
+assign bo=w2|w3;
 endmodule
+
+
 ```
 
 ### RTL Schematic
-![WhatsApp Image 2024-03-30 at 10 12 53](https://github.com/aaron-h-2k5/FULL_ADDER_SUBTRACTOR/assets/144250957/2a82b38e-6b93-4d9f-b47e-cee6ab218fb5)
+![319855210-8e962897-cc6b-4cf5-83bb-b022ab4f2950](https://github.com/nareshofficial/FULL_ADDER_SUBTRACTOR/assets/155141830/b0219b23-5e76-4558-9fe3-dadf37ecd277)
+![319871549-28461f45-19a2-46dd-984e-17424abe2905](https://github.com/nareshofficial/FULL_ADDER_SUBTRACTOR/assets/155141830/1ab621c3-72b6-40ad-a6d6-2462675b46f1)
+
+
 
 ### Output Timing Waveform
-![WhatsApp Image 2024-03-30 at 10 12 52](https://github.com/aaron-h-2k5/FULL_ADDER_SUBTRACTOR/assets/144250957/30360404-5a1c-479e-9357-67df02d1df13)
+
+![319877323-9a365a36-d985-43a9-8079-4faa42373cda](https://github.com/nareshofficial/FULL_ADDER_SUBTRACTOR/assets/155141830/dd250e44-5541-4409-bbee-d5dd38df232e)
+
+![319871575-8bb71c44-59e2-4c7d-82ea-7a7e6c4f1601](https://github.com/nareshofficial/FULL_ADDER_SUBTRACTOR/assets/155141830/4f7d35c3-836a-4442-a477-2e0fa733e070)
 
 ### Result:
 
